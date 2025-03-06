@@ -94,7 +94,22 @@ Before proceeding, ensure you have access to the **SAP BTP Cockpit** and a valid
 
    Enter the Temporary Authentication Code in the console to complete the login.
 
-2. **Deploy the Application**  
+2. **Deploy the Application**
+
+   Before run 'cf bg-deploy' command you should be sure that you have according mta plugin
+
+   win
+
+   ```bash
+   cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.win64.exe
+   ```
+
+   mac
+
+    ```bash
+   cf install-plugin -f <https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.osx>
+   ```
+
    Run the deployment command:
 
    ```bash
