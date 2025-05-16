@@ -1,0 +1,3416 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Business Partner (A2X)",
+    "version": "1.5.0",
+    "description": "This service enables you to create, display, update, and delete data related to Business Partner, Supplier, and Customer with the data provided in a payload, in an API call. This service also supports create deep entity operation and batch processing."
+  },
+  "externalDocs": {
+    "description": "Business Documentation",
+    "url": "https://help.sap.com/http.svc/ahp2/SAP_S4HANA_CLOUD/2408.latest/EN/85/043858ea0f9244e10000000a4450e5/frameset.htm"
+  },
+  "x-sap-api-type": "ODATA",
+  "x-sap-shortText": "Create, read, update or delete the master data for business partner, supplier or customer using this synchronous inbound service",
+  "x-sap-software-min-version": "2408",
+  "x-sap-ext-overview": [
+    {
+      "name": "Communication Scenario",
+      "values": [
+        {
+          "text": "Business Partner, Customer and Supplier Integration (SAP_COM_0008)",
+          "format": "plain"
+        },
+        {
+          "text": "SAP Analytics Cloud for Planning Integration (SAP_COM_0087)",
+          "format": "plain"
+        },
+        {
+          "text": "SAP Real Estate Contract API Integration (SAP_COM_0393)",
+          "format": "plain"
+        },
+        {
+          "text": "Excise Tax Integration (SAP_COM_0568)",
+          "format": "plain"
+        },
+        {
+          "text": "Procurement - Supplier Quotation Management Integration (Deprecated) (SAP_COM_0760)",
+          "format": "plain"
+        },
+        {
+          "text": "Resource Management in SAP Project and Resource Management - API Integration (SAP_COM_0A11)",
+          "format": "plain"
+        }
+      ]
+    },
+    {
+      "name": "Scope Items",
+      "values": [
+        {
+          "text": "[Master Data Integration (1RO)](https://me.sap.com/processnavigator/SolP/1RO \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Invoice Processing with SAP Ariba Central Invoice Management (4N6)](https://me.sap.com/processnavigator/SolP/4N6 \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Standalone Manual Transportation Planning (6W5)](https://me.sap.com/processnavigator/SolP/6W5 \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Import Connection Setup with SAP Analytics Cloud (1YB)](https://me.sap.com/processnavigator/SolP/1YB \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Lease-In Accounting (1T6)](https://me.sap.com/processnavigator/SolP/1T6 \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Lease-Out Accounting (21Q)](https://me.sap.com/processnavigator/SolP/21Q \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Service Contract (21R)](https://me.sap.com/processnavigator/SolP/21R \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Lease-Out Accounting (O1Q)](https://me.sap.com/processnavigator/SolP/O1Q \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Service Contract (O1R)](https://me.sap.com/processnavigator/SolP/O1R \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Lease-In Accounting (OT6)](https://me.sap.com/processnavigator/SolP/OT6 \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Integration of SAP S/4HANA and SAP Cloud for Real Estate (4X3)](https://me.sap.com/processnavigator/SolP/4X3 \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Enablement of SAP Excise Tax Management (4LO)](https://me.sap.com/processnavigator/SolP/4LO \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Direct Material Sourcing (4RD)](https://me.sap.com/processnavigator/SolP/4RD \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Resource Management for Projects (6JO)](https://me.sap.com/processnavigator/SolP/6JO \" Link To BP \")",
+          "format": "markdown"
+        }
+      ]
+    },
+    {
+      "name": "Authentication Methods",
+      "values": [
+        {
+          "text": "x509",
+          "format": "plain"
+        }
+      ]
+    },
+    {
+      "name": "Business Object",
+      "values": [
+        {
+          "text": "Business Partner",
+          "format": "plain"
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "url": "https://{host}:{port}/sap/opu/odata/sap/API_BUSINESS_PARTNER",
+      "variables": {
+        "host": {
+          "default": ""
+        },
+        "port": {
+          "default": ""
+        }
+      }
+    },
+    {
+      "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER"
+    }
+  ],
+  "x-sap-extensible": {
+    "supported": "manual",
+    "description": "If you are working with key user extensibility, the API can be extended by custom fields on the following business contexts (field usage for this API needs to be selected):\r\n* Master Data: Business Partner (BP_CUSTVEND1)\r\n* Customer Core View (CUSTOMER_GENERAL)\r\n* Customer company code core (CUST_COMPANYCODE)\r\n* Partner Sales area core view (CUST_SALES)\r\n* Supplier Core View (SUPPLIER_GENERAL)\r\n* Supplier Company Code Core (SUP_COMPANYCODE)\r\n* Supplier Purchasing Org Core (SUP_PURORG)\r\n\r\n[How to add an extension field to an API](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/ce819b8557194ae0aa180ba4ac6a04de.html)"
+  },
+  "tags": [
+    {
+      "name": "Email Address"
+    },
+    {
+      "name": "Fax Number"
+    },
+    {
+      "name": "Home Page URL"
+    },
+    {
+      "name": "Phone Number"
+    },
+    {
+      "name": "Business Partner Address-Dependent ILN"
+    },
+    {
+      "name": "Address Independent Email Address"
+    },
+    {
+      "name": "Address Independent Fax Number"
+    },
+    {
+      "name": "Address Independent Mobile Number"
+    },
+    {
+      "name": "Address Independent Phone Number"
+    },
+    {
+      "name": "Address Independent Website"
+    },
+    {
+      "name": "Contact Person Address"
+    },
+    {
+      "name": "Function and Department"
+    },
+    {
+      "name": "Credit Worthiness"
+    },
+    {
+      "name": "Business Partner Data Controller"
+    },
+    {
+      "name": "Employment Overview"
+    },
+    {
+      "name": "Financial Services Details"
+    },
+    {
+      "name": "Financial Services Reporting"
+    },
+    {
+      "name": "Fiscal Year Information"
+    },
+    {
+      "name": "BP International Address Version"
+    },
+    {
+      "name": "Business Partner Relationship"
+    },
+    {
+      "name": "Address Usage"
+    },
+    {
+      "name": "Identification"
+    },
+    {
+      "name": "Industry"
+    },
+    {
+      "name": "Business Partner"
+    },
+    {
+      "name": "Address"
+    },
+    {
+      "name": "Additional Names"
+    },
+    {
+      "name": "Bank"
+    },
+    {
+      "name": "Contact"
+    },
+    {
+      "name": "Partner is Bank"
+    },
+    {
+      "name": "Business Partner Payment Card"
+    },
+    {
+      "name": "Ratings"
+    },
+    {
+      "name": "Role"
+    },
+    {
+      "name": "Tax Number"
+    },
+    {
+      "name": "Business Partner Address Dependent Tax Numbers"
+    },
+    {
+      "name": "Customer Address Dependent External Identifier"
+    },
+    {
+      "name": "Customer Address Dependent Infomation"
+    },
+    {
+      "name": "Customer"
+    },
+    {
+      "name": "Customer Company"
+    },
+    {
+      "name": "Customer Company Text"
+    },
+    {
+      "name": "Customer Dunning"
+    },
+    {
+      "name": "Sales Area"
+    },
+    {
+      "name": "Sales Area Tax"
+    },
+    {
+      "name": "Customer Sales Area Text"
+    },
+    {
+      "name": "Customer Tax Grouping"
+    },
+    {
+      "name": "Customer Text"
+    },
+    {
+      "name": "Customer Unloading Point"
+    },
+    {
+      "name": "Withholding Tax"
+    },
+    {
+      "name": "Sales Partner Functions"
+    },
+    {
+      "name": "Customer Sales Area Address Dependent Information"
+    },
+    {
+      "name": "Customer Sales Area Address Dependent Tax Info"
+    },
+    {
+      "name": "Customer Unloading Point Address Dependent Information"
+    },
+    {
+      "name": "Supplier"
+    },
+    {
+      "name": "Supplier Company"
+    },
+    {
+      "name": "Supplier Company Text"
+    },
+    {
+      "name": "Supplier Dunning"
+    },
+    {
+      "name": "Purchasing Partner Functions"
+    },
+    {
+      "name": "Purchasing Organization"
+    },
+    {
+      "name": "Purchasing Organization Text"
+    },
+    {
+      "name": "Supplier Text"
+    },
+    {
+      "name": "Company Withholding Tax"
+    }
+  ],
+  "paths": {
+    "/A_Supplier": {
+      "get": {
+        "summary": "Retrieves supplier general data.",
+        "description": "Retrieves general data of all the supplier records available in the system.",
+        "tags": [
+          "Supplier"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filter items by property values, see [Filtering](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=64)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Supplier",
+                  "Supplier desc",
+                  "AlternativePayeeAccountNumber",
+                  "AlternativePayeeAccountNumber desc",
+                  "AuthorizationGroup",
+                  "AuthorizationGroup desc",
+                  "BusinessPartnerPanNumber",
+                  "BusinessPartnerPanNumber desc",
+                  "CreatedByUser",
+                  "CreatedByUser desc",
+                  "CreationDate",
+                  "CreationDate desc",
+                  "Customer",
+                  "Customer desc",
+                  "PaymentIsBlockedForSupplier",
+                  "PaymentIsBlockedForSupplier desc",
+                  "PostingIsBlocked",
+                  "PostingIsBlocked desc",
+                  "PurchasingIsBlocked",
+                  "PurchasingIsBlocked desc",
+                  "SupplierAccountGroup",
+                  "SupplierAccountGroup desc",
+                  "SupplierFullName",
+                  "SupplierFullName desc",
+                  "SupplierName",
+                  "SupplierName desc",
+                  "VATRegistration",
+                  "VATRegistration desc",
+                  "BirthDate",
+                  "BirthDate desc",
+                  "ConcatenatedInternationalLocNo",
+                  "ConcatenatedInternationalLocNo desc",
+                  "DeletionIndicator",
+                  "DeletionIndicator desc",
+                  "FiscalAddress",
+                  "FiscalAddress desc",
+                  "Industry",
+                  "Industry desc",
+                  "InternationalLocationNumber1",
+                  "InternationalLocationNumber1 desc",
+                  "InternationalLocationNumber2",
+                  "InternationalLocationNumber2 desc",
+                  "InternationalLocationNumber3",
+                  "InternationalLocationNumber3 desc",
+                  "IsNaturalPerson",
+                  "IsNaturalPerson desc",
+                  "PaymentReason",
+                  "PaymentReason desc",
+                  "ResponsibleType",
+                  "ResponsibleType desc",
+                  "SuplrQltyInProcmtCertfnValidTo",
+                  "SuplrQltyInProcmtCertfnValidTo desc",
+                  "SuplrQualityManagementSystem",
+                  "SuplrQualityManagementSystem desc",
+                  "SupplierCorporateGroup",
+                  "SupplierCorporateGroup desc",
+                  "SupplierProcurementBlock",
+                  "SupplierProcurementBlock desc",
+                  "TaxNumber1",
+                  "TaxNumber1 desc",
+                  "TaxNumber2",
+                  "TaxNumber2 desc",
+                  "TaxNumber3",
+                  "TaxNumber3 desc",
+                  "TaxNumber4",
+                  "TaxNumber4 desc",
+                  "TaxNumber5",
+                  "TaxNumber5 desc",
+                  "TaxNumberResponsible",
+                  "TaxNumberResponsible desc",
+                  "TaxNumberType",
+                  "TaxNumberType desc",
+                  "SuplrProofOfDelivRlvtCode",
+                  "SuplrProofOfDelivRlvtCode desc",
+                  "BR_TaxIsSplit",
+                  "BR_TaxIsSplit desc",
+                  "DataExchangeInstructionKey",
+                  "DataExchangeInstructionKey desc"
+                ]
+              }
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Supplier",
+                  "AlternativePayeeAccountNumber",
+                  "AuthorizationGroup",
+                  "BusinessPartnerPanNumber",
+                  "CreatedByUser",
+                  "CreationDate",
+                  "Customer",
+                  "PaymentIsBlockedForSupplier",
+                  "PostingIsBlocked",
+                  "PurchasingIsBlocked",
+                  "SupplierAccountGroup",
+                  "SupplierFullName",
+                  "SupplierName",
+                  "VATRegistration",
+                  "BirthDate",
+                  "ConcatenatedInternationalLocNo",
+                  "DeletionIndicator",
+                  "FiscalAddress",
+                  "Industry",
+                  "InternationalLocationNumber1",
+                  "InternationalLocationNumber2",
+                  "InternationalLocationNumber3",
+                  "IsNaturalPerson",
+                  "PaymentReason",
+                  "ResponsibleType",
+                  "SuplrQltyInProcmtCertfnValidTo",
+                  "SuplrQualityManagementSystem",
+                  "SupplierCorporateGroup",
+                  "SupplierProcurementBlock",
+                  "TaxNumber1",
+                  "TaxNumber2",
+                  "TaxNumber3",
+                  "TaxNumber4",
+                  "TaxNumber5",
+                  "TaxNumberResponsible",
+                  "TaxNumberType",
+                  "SuplrProofOfDelivRlvtCode",
+                  "BR_TaxIsSplit",
+                  "DataExchangeInstructionKey",
+                  "to_SupplierCompany",
+                  "to_SupplierPurchasingOrg",
+                  "to_SupplierText"
+                ]
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "to_SupplierCompany",
+                  "to_SupplierPurchasingOrg",
+                  "to_SupplierText"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Wrapper",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "title": "Collection of A_SupplierType",
+                      "type": "object",
+                      "properties": {
+                        "__count": {
+                          "$ref": "#/components/schemas/count"
+                        },
+                        "results": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierType"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/A_Supplier('{Supplier}')": {
+      "parameters": [
+        {
+          "name": "Supplier",
+          "in": "path",
+          "required": true,
+          "description": "Account Number of Supplier",
+          "schema": {
+            "type": "string",
+            "maxLength": 10
+          }
+        }
+      ],
+      "get": {
+        "summary": "Retrieves supplier general data by using supplier number.",
+        "description": "Retrieves the general data of the supplier record by using supplier number.",
+        "tags": [
+          "Supplier"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Supplier",
+                  "AlternativePayeeAccountNumber",
+                  "AuthorizationGroup",
+                  "BusinessPartnerPanNumber",
+                  "CreatedByUser",
+                  "CreationDate",
+                  "Customer",
+                  "PaymentIsBlockedForSupplier",
+                  "PostingIsBlocked",
+                  "PurchasingIsBlocked",
+                  "SupplierAccountGroup",
+                  "SupplierFullName",
+                  "SupplierName",
+                  "VATRegistration",
+                  "BirthDate",
+                  "ConcatenatedInternationalLocNo",
+                  "DeletionIndicator",
+                  "FiscalAddress",
+                  "Industry",
+                  "InternationalLocationNumber1",
+                  "InternationalLocationNumber2",
+                  "InternationalLocationNumber3",
+                  "IsNaturalPerson",
+                  "PaymentReason",
+                  "ResponsibleType",
+                  "SuplrQltyInProcmtCertfnValidTo",
+                  "SuplrQualityManagementSystem",
+                  "SupplierCorporateGroup",
+                  "SupplierProcurementBlock",
+                  "TaxNumber1",
+                  "TaxNumber2",
+                  "TaxNumber3",
+                  "TaxNumber4",
+                  "TaxNumber5",
+                  "TaxNumberResponsible",
+                  "TaxNumberType",
+                  "SuplrProofOfDelivRlvtCode",
+                  "BR_TaxIsSplit",
+                  "DataExchangeInstructionKey",
+                  "to_SupplierCompany",
+                  "to_SupplierPurchasingOrg",
+                  "to_SupplierText"
+                ]
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "to_SupplierCompany",
+                  "to_SupplierPurchasingOrg",
+                  "to_SupplierText"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "A_SupplierType",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierType"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates supplier general data.",
+        "description": "Updates supplier general data by using supplier number.",
+        "tags": [
+          "Supplier"
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "New property values",
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Modified A_SupplierType",
+                "type": "object",
+                "properties": {
+                  "d": {
+                    "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierType-update"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "API_BUSINESS_PARTNER.A_SupplierType": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "AlternativePayeeAccountNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Alternative Payee",
+            "description": "Account Number of the Alternative Payee"
+          },
+          "AuthorizationGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Authorization",
+            "description": "Authorization Group"
+          },
+          "BusinessPartnerPanNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 40,
+            "title": "PAN",
+            "description": "Permanent Account Number"
+          },
+          "CreatedByUser": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 12,
+            "title": "Created by",
+            "description": "Name of Person who Created the Object"
+          },
+          "CreationDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Created On",
+            "description": "Record Created On"
+          },
+          "Customer": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Customer",
+            "description": "Customer Number"
+          },
+          "PaymentIsBlockedForSupplier": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Payment block",
+            "description": "Payment Block"
+          },
+          "PostingIsBlocked": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Posting Block",
+            "description": "Central Posting Block"
+          },
+          "PurchasingIsBlocked": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Purch. block",
+            "description": "Centrally imposed purchasing block"
+          },
+          "SupplierAccountGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Account Group",
+            "description": "Supplier Account Group"
+          },
+          "SupplierFullName": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 220,
+            "title": "Supplier Name",
+            "description": "Supplier Full Name"
+          },
+          "SupplierName": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 80,
+            "title": "Name of Supplier"
+          },
+          "VATRegistration": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 20,
+            "title": "VAT Registration No.",
+            "description": "VAT Registration Number"
+          },
+          "BirthDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Date of Birth",
+            "description": "Date of Birth of the Person Subject to Withholding Tax"
+          },
+          "ConcatenatedInternationalLocNo": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 20,
+            "title": "Int. Location No.",
+            "description": "Cocatenated International Location Number"
+          },
+          "DeletionIndicator": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Deletion Flag",
+            "description": "Central Deletion Flag for Master Record"
+          },
+          "FiscalAddress": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Fiscal address",
+            "description": "Account number of the master record with fiscal address"
+          },
+          "Industry": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Industry",
+            "description": "Industry Key"
+          },
+          "InternationalLocationNumber1": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 7,
+            "title": "Int. location no. 1",
+            "description": "International location number  (part 1)"
+          },
+          "InternationalLocationNumber2": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 5,
+            "title": "Int. location no. 2",
+            "description": "International location number (Part 2)"
+          },
+          "InternationalLocationNumber3": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Check digit",
+            "description": "Check digit for the international location number"
+          },
+          "IsNaturalPerson": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Natural Person"
+          },
+          "PaymentReason": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Payment Reason"
+          },
+          "ResponsibleType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Tax Type"
+          },
+          "SuplrQltyInProcmtCertfnValidTo": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "QM System Valid To",
+            "description": "Validity Date of Certification"
+          },
+          "SuplrQualityManagementSystem": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Actual QM System",
+            "description": "Supplier's QM System"
+          },
+          "SupplierCorporateGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Group Key"
+          },
+          "SupplierProcurementBlock": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Block Function",
+            "description": "Function That Will Be Blocked"
+          },
+          "TaxNumber1": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 16,
+            "title": "Tax Number 1"
+          },
+          "TaxNumber2": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 11,
+            "title": "Tax Number 2"
+          },
+          "TaxNumber3": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 18,
+            "title": "Tax Number 3"
+          },
+          "TaxNumber4": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 18,
+            "title": "Tax Number 4"
+          },
+          "TaxNumber5": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 60,
+            "title": "Tax Number 5"
+          },
+          "TaxNumberResponsible": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 18,
+            "title": "Tax Number",
+            "description": "Tax Number at Responsible Tax Authority"
+          },
+          "TaxNumberType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Tax Number Type"
+          },
+          "SuplrProofOfDelivRlvtCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Relevant for POD",
+            "description": "Supplier indicator relevant for proof of delivery"
+          },
+          "BR_TaxIsSplit": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Tax split",
+            "description": "Tax Split"
+          },
+          "DataExchangeInstructionKey": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Instruction Key",
+            "description": "Instruction Key for Data Medium Exchange"
+          },
+          "to_SupplierCompany": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierCompanyType"
+                }
+              }
+            }
+          },
+          "to_SupplierPurchasingOrg": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierPurchasingOrgType"
+                }
+              }
+            }
+          },
+          "to_SupplierText": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierTextType"
+                }
+              }
+            }
+          }
+        },
+        "title": "Supplier"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierType-create": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "AlternativePayeeAccountNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Alternative Payee",
+            "description": "Account Number of the Alternative Payee"
+          },
+          "AuthorizationGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Authorization",
+            "description": "Authorization Group"
+          },
+          "BusinessPartnerPanNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 40,
+            "title": "PAN",
+            "description": "Permanent Account Number"
+          },
+          "Customer": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Customer",
+            "description": "Customer Number"
+          },
+          "PaymentIsBlockedForSupplier": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Payment block",
+            "description": "Payment Block"
+          },
+          "PostingIsBlocked": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Posting Block",
+            "description": "Central Posting Block"
+          },
+          "PurchasingIsBlocked": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Purch. block",
+            "description": "Centrally imposed purchasing block"
+          },
+          "SupplierAccountGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Account Group",
+            "description": "Supplier Account Group"
+          },
+          "BirthDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Date of Birth",
+            "description": "Date of Birth of the Person Subject to Withholding Tax"
+          },
+          "DeletionIndicator": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Deletion Flag",
+            "description": "Central Deletion Flag for Master Record"
+          },
+          "FiscalAddress": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Fiscal address",
+            "description": "Account number of the master record with fiscal address"
+          },
+          "PaymentReason": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Payment Reason"
+          },
+          "ResponsibleType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Tax Type"
+          },
+          "SuplrQltyInProcmtCertfnValidTo": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "QM System Valid To",
+            "description": "Validity Date of Certification"
+          },
+          "SuplrQualityManagementSystem": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Actual QM System",
+            "description": "Supplier's QM System"
+          },
+          "SupplierCorporateGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Group Key"
+          },
+          "SupplierProcurementBlock": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Block Function",
+            "description": "Function That Will Be Blocked"
+          },
+          "TaxNumberResponsible": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 18,
+            "title": "Tax Number",
+            "description": "Tax Number at Responsible Tax Authority"
+          },
+          "TaxNumberType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Tax Number Type"
+          },
+          "SuplrProofOfDelivRlvtCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Relevant for POD",
+            "description": "Supplier indicator relevant for proof of delivery"
+          },
+          "BR_TaxIsSplit": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Tax split",
+            "description": "Tax Split"
+          },
+          "DataExchangeInstructionKey": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Instruction Key",
+            "description": "Instruction Key for Data Medium Exchange"
+          },
+          "to_SupplierCompany": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierCompanyType-create"
+                }
+              }
+            }
+          },
+          "to_SupplierPurchasingOrg": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierPurchasingOrgType-create"
+                }
+              }
+            }
+          },
+          "to_SupplierText": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierTextType-create"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "Supplier"
+        ],
+        "title": "Supplier (for create)"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierType-update": {
+        "type": "object",
+        "properties": {
+          "AlternativePayeeAccountNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Alternative Payee",
+            "description": "Account Number of the Alternative Payee"
+          },
+          "AuthorizationGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Authorization",
+            "description": "Authorization Group"
+          },
+          "BusinessPartnerPanNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 40,
+            "title": "PAN",
+            "description": "Permanent Account Number"
+          },
+          "Customer": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Customer",
+            "description": "Customer Number"
+          },
+          "PaymentIsBlockedForSupplier": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Payment block",
+            "description": "Payment Block"
+          },
+          "PostingIsBlocked": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Posting Block",
+            "description": "Central Posting Block"
+          },
+          "PurchasingIsBlocked": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Purch. block",
+            "description": "Centrally imposed purchasing block"
+          },
+          "SupplierAccountGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Account Group",
+            "description": "Supplier Account Group"
+          },
+          "BirthDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Date of Birth",
+            "description": "Date of Birth of the Person Subject to Withholding Tax"
+          },
+          "DeletionIndicator": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Deletion Flag",
+            "description": "Central Deletion Flag for Master Record"
+          },
+          "FiscalAddress": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Fiscal address",
+            "description": "Account number of the master record with fiscal address"
+          },
+          "PaymentReason": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Payment Reason"
+          },
+          "ResponsibleType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Tax Type"
+          },
+          "SuplrQltyInProcmtCertfnValidTo": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "QM System Valid To",
+            "description": "Validity Date of Certification"
+          },
+          "SuplrQualityManagementSystem": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Actual QM System",
+            "description": "Supplier's QM System"
+          },
+          "SupplierCorporateGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Group Key"
+          },
+          "SupplierProcurementBlock": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Block Function",
+            "description": "Function That Will Be Blocked"
+          },
+          "TaxNumberResponsible": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 18,
+            "title": "Tax Number",
+            "description": "Tax Number at Responsible Tax Authority"
+          },
+          "TaxNumberType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Tax Number Type"
+          },
+          "SuplrProofOfDelivRlvtCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Relevant for POD",
+            "description": "Supplier indicator relevant for proof of delivery"
+          },
+          "BR_TaxIsSplit": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Tax split",
+            "description": "Tax Split"
+          },
+          "DataExchangeInstructionKey": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Instruction Key",
+            "description": "Instruction Key for Data Medium Exchange"
+          }
+        },
+        "title": "Supplier (for update)"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierCompanyType": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "CompanyCode": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Company Code"
+          },
+          "AuthorizationGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Authorization",
+            "description": "Authorization Group"
+          },
+          "CompanyCodeName": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 25,
+            "title": "Company Name",
+            "description": "Name of Company Code or Company"
+          },
+          "PaymentBlockingReason": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Payment Block",
+            "description": "Block Key for Payment"
+          },
+          "SupplierIsBlockedForPosting": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Co.code post.block",
+            "description": "Posting block for company code"
+          },
+          "AccountingClerk": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Clerk Abbrev.",
+            "description": "Accounting Clerk Abbreviation"
+          },
+          "AccountingClerkFaxNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 31,
+            "title": "Acctg clerk's fax",
+            "description": "Accounting clerk's fax number at the customer/vendor"
+          },
+          "AccountingClerkPhoneNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 30,
+            "title": "Acct.clerks tel.no.",
+            "description": "Accounting clerk's telephone number at business partner"
+          },
+          "SupplierClerk": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 15,
+            "title": "Clerk at vendor"
+          },
+          "SupplierClerkURL": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 130,
+            "title": "Clrk's internet add.",
+            "description": "Internet address of partner company clerk"
+          },
+          "PaymentMethodsList": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Payment Methods",
+            "description": "List of Respected Payment Methods"
+          },
+          "PaymentReason": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Payment Reason"
+          },
+          "PaymentTerms": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Terms of Payment",
+            "description": "Key for Terms of Payment"
+          },
+          "ClearCustomerSupplier": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Clearing w/ Customer",
+            "description": "Indicator: Clearing Between Customer and Supplier?"
+          },
+          "IsToBeLocallyProcessed": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Local Processing",
+            "description": "Indicator: Local Processing?"
+          },
+          "ItemIsToBePaidSeparately": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Individual Payment",
+            "description": "Indicator: Pay All Items Separately?"
+          },
+          "PaymentIsToBeSentByEDI": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Pmnt advice by EDI",
+            "description": "Indicator: Send Payment Advices by EDI"
+          },
+          "HouseBank": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 5,
+            "title": "House Bank",
+            "description": "Short Key for a House Bank"
+          },
+          "CheckPaidDurationInDays": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "x-sap-precision": 3,
+            "x-sap-scale": 0,
+            "multipleOf": 1,
+            "minimum": -999,
+            "maximum": 999,
+            "example": "0",
+            "title": "Check Cashing Time",
+            "description": "Probable Time Until Check Is Paid"
+          },
+          "Currency": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 5,
+            "title": "Currency",
+            "description": "Currency Key"
+          },
+          "BillOfExchLmtAmtInCoCodeCrcy": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "x-sap-precision": 14,
+            "x-sap-scale": 3,
+            "multipleOf": 1.0e-3,
+            "minimum": -99999999999.999,
+            "maximum": 99999999999.999,
+            "example": "0",
+            "title": "Bill/Ex. Limit",
+            "description": "Bill of Exchange Limit (in Local Currency)"
+          },
+          "SupplierClerkIDBySupplier": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 12,
+            "title": "Account with vendor",
+            "description": "Our account number with the vendor"
+          },
+          "ReconciliationAccount": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Reconciliation Acct",
+            "description": "Reconciliation Account in General Ledger"
+          },
+          "InterestCalculationCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Interest Indicator"
+          },
+          "InterestCalculationDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Last Key Date",
+            "description": "Key Date of Last Interest Calculation"
+          },
+          "IntrstCalcFrequencyInMonths": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Int.Calc.Freq.",
+            "description": "Interest Calculation Frequency in Months"
+          },
+          "SupplierHeadOffice": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Head Office",
+            "description": "Head Office Account Number"
+          },
+          "AlternativePayee": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Alternative payee",
+            "description": "Account number of the alternative payee"
+          },
+          "LayoutSortingRule": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Sort key",
+            "description": "Key for sorting according to assignment numbers"
+          },
+          "APARToleranceGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Tolerance Group",
+            "description": "Tolerance Group for Business Partner/G/L Account"
+          },
+          "SupplierCertificationDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Certification Date"
+          },
+          "SupplierAccountNote": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 30,
+            "title": "Account Memo",
+            "description": "Memo"
+          },
+          "WithholdingTaxCountry": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "WTax C/R Key",
+            "description": "Withholding Tax Country/Region Key"
+          },
+          "DeletionIndicator": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Co.Cde Deletion Flag",
+            "description": "Deletion Flag for Master Record (Company Code Level)"
+          },
+          "CashPlanningGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Planning Group"
+          },
+          "IsToBeCheckedForDuplicates": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Check Double Invoice",
+            "description": "Check Flag for Double Invoices or Credit Memos"
+          },
+          "MinorityGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Minority Indicator"
+          },
+          "SupplierAccountGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Account Group",
+            "description": "Supplier Account Group"
+          },
+          "to_CompanyText": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierCompanyTextType"
+                }
+              }
+            }
+          },
+          "to_Supplier": {
+            "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierType"
+          },
+          "to_SupplierDunning": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierDunningType"
+                }
+              }
+            }
+          },
+          "to_SupplierWithHoldingTax": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierWithHoldingTaxType"
+                }
+              }
+            }
+          }
+        },
+        "title": "Supplier Company"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierCompanyType-create": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "CompanyCode": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Company Code"
+          },
+          "AuthorizationGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Authorization",
+            "description": "Authorization Group"
+          },
+          "PaymentBlockingReason": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Payment Block",
+            "description": "Block Key for Payment"
+          },
+          "SupplierIsBlockedForPosting": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Co.code post.block",
+            "description": "Posting block for company code"
+          },
+          "AccountingClerk": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Clerk Abbrev.",
+            "description": "Accounting Clerk Abbreviation"
+          },
+          "AccountingClerkFaxNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 31,
+            "title": "Acctg clerk's fax",
+            "description": "Accounting clerk's fax number at the customer/vendor"
+          },
+          "AccountingClerkPhoneNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 30,
+            "title": "Acct.clerks tel.no.",
+            "description": "Accounting clerk's telephone number at business partner"
+          },
+          "SupplierClerk": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 15,
+            "title": "Clerk at vendor"
+          },
+          "SupplierClerkURL": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 130,
+            "title": "Clrk's internet add.",
+            "description": "Internet address of partner company clerk"
+          },
+          "PaymentMethodsList": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Payment Methods",
+            "description": "List of Respected Payment Methods"
+          },
+          "PaymentReason": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Payment Reason"
+          },
+          "PaymentTerms": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Terms of Payment",
+            "description": "Key for Terms of Payment"
+          },
+          "ClearCustomerSupplier": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Clearing w/ Customer",
+            "description": "Indicator: Clearing Between Customer and Supplier?"
+          },
+          "IsToBeLocallyProcessed": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Local Processing",
+            "description": "Indicator: Local Processing?"
+          },
+          "ItemIsToBePaidSeparately": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Individual Payment",
+            "description": "Indicator: Pay All Items Separately?"
+          },
+          "PaymentIsToBeSentByEDI": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Pmnt advice by EDI",
+            "description": "Indicator: Send Payment Advices by EDI"
+          },
+          "HouseBank": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 5,
+            "title": "House Bank",
+            "description": "Short Key for a House Bank"
+          },
+          "CheckPaidDurationInDays": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "x-sap-precision": 3,
+            "x-sap-scale": 0,
+            "multipleOf": 1,
+            "minimum": -999,
+            "maximum": 999,
+            "example": "0",
+            "title": "Check Cashing Time",
+            "description": "Probable Time Until Check Is Paid"
+          },
+          "Currency": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 5,
+            "title": "Currency",
+            "description": "Currency Key"
+          },
+          "BillOfExchLmtAmtInCoCodeCrcy": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "x-sap-precision": 14,
+            "x-sap-scale": 3,
+            "multipleOf": 1.0e-3,
+            "minimum": -99999999999.999,
+            "maximum": 99999999999.999,
+            "example": "0",
+            "title": "Bill/Ex. Limit",
+            "description": "Bill of Exchange Limit (in Local Currency)"
+          },
+          "SupplierClerkIDBySupplier": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 12,
+            "title": "Account with vendor",
+            "description": "Our account number with the vendor"
+          },
+          "ReconciliationAccount": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Reconciliation Acct",
+            "description": "Reconciliation Account in General Ledger"
+          },
+          "InterestCalculationCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Interest Indicator"
+          },
+          "InterestCalculationDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Last Key Date",
+            "description": "Key Date of Last Interest Calculation"
+          },
+          "IntrstCalcFrequencyInMonths": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Int.Calc.Freq.",
+            "description": "Interest Calculation Frequency in Months"
+          },
+          "SupplierHeadOffice": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Head Office",
+            "description": "Head Office Account Number"
+          },
+          "AlternativePayee": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Alternative payee",
+            "description": "Account number of the alternative payee"
+          },
+          "LayoutSortingRule": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Sort key",
+            "description": "Key for sorting according to assignment numbers"
+          },
+          "APARToleranceGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Tolerance Group",
+            "description": "Tolerance Group for Business Partner/G/L Account"
+          },
+          "SupplierCertificationDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Certification Date"
+          },
+          "SupplierAccountNote": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 30,
+            "title": "Account Memo",
+            "description": "Memo"
+          },
+          "WithholdingTaxCountry": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "WTax C/R Key",
+            "description": "Withholding Tax Country/Region Key"
+          },
+          "DeletionIndicator": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Co.Cde Deletion Flag",
+            "description": "Deletion Flag for Master Record (Company Code Level)"
+          },
+          "CashPlanningGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Planning Group"
+          },
+          "IsToBeCheckedForDuplicates": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Check Double Invoice",
+            "description": "Check Flag for Double Invoices or Credit Memos"
+          },
+          "MinorityGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Minority Indicator"
+          },
+          "SupplierAccountGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Account Group",
+            "description": "Supplier Account Group"
+          },
+          "to_CompanyText": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierCompanyTextType-create"
+                }
+              }
+            }
+          },
+          "to_Supplier": {
+            "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierType-create"
+          },
+          "to_SupplierDunning": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierDunningType-create"
+                }
+              }
+            }
+          },
+          "to_SupplierWithHoldingTax": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierWithHoldingTaxType-create"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "Supplier",
+          "CompanyCode"
+        ],
+        "title": "Supplier Company (for create)"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierCompanyTextType": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "CompanyCode": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Company Code"
+          },
+          "Language": {
+            "type": "string",
+            "maxLength": 2,
+            "title": "Language",
+            "description": "Language key"
+          },
+          "LongTextID": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Text ID"
+          },
+          "LongText": {
+            "type": "string",
+            "nullable": true,
+            "title": "String"
+          }
+        },
+        "title": "Supplier Company Text"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierCompanyTextType-create": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "CompanyCode": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Company Code"
+          },
+          "Language": {
+            "type": "string",
+            "maxLength": 2,
+            "title": "Language",
+            "description": "Language key"
+          },
+          "LongTextID": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Text ID"
+          }
+        },
+        "required": [
+          "Supplier",
+          "CompanyCode",
+          "Language",
+          "LongTextID"
+        ],
+        "title": "Supplier Company Text (for create)"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierDunningType": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "CompanyCode": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Company Code"
+          },
+          "DunningArea": {
+            "type": "string",
+            "maxLength": 2,
+            "title": "Dunning Area"
+          },
+          "DunningBlock": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Dunning Block"
+          },
+          "DunningLevel": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Dunning Level"
+          },
+          "DunningProcedure": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Dunning Procedure"
+          },
+          "DunningRecipient": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Dunn.recipient",
+            "description": "Account number of the dunning recipient"
+          },
+          "LastDunnedOn": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Last Dunned",
+            "description": "Date of Last Dunning Notice"
+          },
+          "LegDunningProcedureOn": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Legal Dunn.Proc.From",
+            "description": "Date of the Legal Dunning Proceedings"
+          },
+          "DunningClerk": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Dunning Clerk"
+          },
+          "AuthorizationGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Authorization",
+            "description": "Authorization Group"
+          },
+          "SupplierAccountGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Account Group",
+            "description": "Supplier Account Group"
+          }
+        },
+        "title": "Supplier Dunning"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierDunningType-create": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "CompanyCode": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Company Code"
+          },
+          "DunningArea": {
+            "type": "string",
+            "maxLength": 2,
+            "title": "Dunning Area"
+          },
+          "DunningBlock": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Dunning Block"
+          },
+          "DunningLevel": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Dunning Level"
+          },
+          "DunningProcedure": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Dunning Procedure"
+          },
+          "DunningRecipient": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Dunn.recipient",
+            "description": "Account number of the dunning recipient"
+          },
+          "LastDunnedOn": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Last Dunned",
+            "description": "Date of Last Dunning Notice"
+          },
+          "LegDunningProcedureOn": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Legal Dunn.Proc.From",
+            "description": "Date of the Legal Dunning Proceedings"
+          },
+          "DunningClerk": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Dunning Clerk"
+          },
+          "AuthorizationGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Authorization",
+            "description": "Authorization Group"
+          },
+          "SupplierAccountGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Account Group",
+            "description": "Supplier Account Group"
+          }
+        },
+        "required": [
+          "Supplier",
+          "CompanyCode",
+          "DunningArea"
+        ],
+        "title": "Supplier Dunning (for create)"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierPartnerFuncType": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "PurchasingOrganization": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Purch. Organization",
+            "description": "Purchasing Organization"
+          },
+          "SupplierSubrange": {
+            "type": "string",
+            "maxLength": 6,
+            "title": "Supplier Subrange"
+          },
+          "Plant": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Plant"
+          },
+          "PartnerFunction": {
+            "type": "string",
+            "maxLength": 2,
+            "title": "Partner Function"
+          },
+          "PartnerCounter": {
+            "type": "string",
+            "maxLength": 3,
+            "title": "Partner counter"
+          },
+          "DefaultPartner": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Default Partner"
+          },
+          "CreationDate": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Created On",
+            "description": "Record Creation Date"
+          },
+          "CreatedByUser": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 12,
+            "title": "Created By",
+            "description": "Name of Person Responsible for Creating the Object"
+          },
+          "ReferenceSupplier": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Ref. to suplr",
+            "description": "Reference to other supplier"
+          },
+          "AuthorizationGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Authorization",
+            "description": "Authorization Group"
+          }
+        },
+        "title": "Purchasing Partner Functions"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierPartnerFuncType-create": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "PurchasingOrganization": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Purch. Organization",
+            "description": "Purchasing Organization"
+          },
+          "SupplierSubrange": {
+            "type": "string",
+            "maxLength": 6,
+            "title": "Supplier Subrange"
+          },
+          "Plant": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Plant"
+          },
+          "PartnerFunction": {
+            "type": "string",
+            "maxLength": 2,
+            "title": "Partner Function"
+          },
+          "PartnerCounter": {
+            "type": "string",
+            "maxLength": 3,
+            "title": "Partner counter"
+          },
+          "DefaultPartner": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Default Partner"
+          },
+          "ReferenceSupplier": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Ref. to suplr",
+            "description": "Reference to other supplier"
+          },
+          "AuthorizationGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Authorization",
+            "description": "Authorization Group"
+          }
+        },
+        "required": [
+          "Supplier",
+          "PurchasingOrganization",
+          "SupplierSubrange",
+          "Plant",
+          "PartnerFunction",
+          "PartnerCounter"
+        ],
+        "title": "Purchasing Partner Functions (for create)"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierPurchasingOrgType": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Supplier's Account Number"
+          },
+          "PurchasingOrganization": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Purch. Organization",
+            "description": "Purchasing Organization"
+          },
+          "AutomaticEvaluatedRcptSettlmt": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Aut. ev. GRSetmt.Ret",
+            "description": "Automatic evaluated receipt settlement for return items"
+          },
+          "CalculationSchemaGroupCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Schema Grp, Supplier",
+            "description": "Group for Calculation Schema (Supplier)"
+          },
+          "DeletionIndicator": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Del. flag POrg.",
+            "description": "Deletion Indicator for Supplier at Purchasing Level"
+          },
+          "EvaldReceiptSettlementIsActive": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Eval. Receipt Sett.",
+            "description": "Evaluated Receipt Settlement (ERS)"
+          },
+          "IncotermsClassification": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Incoterms",
+            "description": "Incoterms (Part 1)"
+          },
+          "IncotermsTransferLocation": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 28,
+            "title": "Incoterms (Part 2)"
+          },
+          "IncotermsVersion": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Incoterms Version"
+          },
+          "IncotermsLocation1": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 70,
+            "title": "Incoterms Location 1"
+          },
+          "IncotermsLocation2": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 70,
+            "title": "Incoterms Location 2"
+          },
+          "IncotermsSupChnLoc1AddlUUID": {
+            "type": "string",
+            "nullable": true,
+            "format": "uuid",
+            "example": "01234567-89ab-cdef-0123-456789abcdef",
+            "title": "Location UUID"
+          },
+          "IncotermsSupChnLoc2AddlUUID": {
+            "type": "string",
+            "nullable": true,
+            "format": "uuid",
+            "example": "01234567-89ab-cdef-0123-456789abcdef",
+            "title": "Location UUID"
+          },
+          "IncotermsSupChnDvtgLocAddlUUID": {
+            "type": "string",
+            "nullable": true,
+            "format": "uuid",
+            "example": "01234567-89ab-cdef-0123-456789abcdef",
+            "title": "Location UUID"
+          },
+          "IntrastatCrsBorderTrMode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Mode of Transport",
+            "description": "Mode of Transport at the Border (Intrastat)"
+          },
+          "InvoiceIsGoodsReceiptBased": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "GR-Based Inv. Verif.",
+            "description": "Indicator: GR-Based Invoice Verification"
+          },
+          "InvoiceIsMMServiceEntryBased": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Srv.-Based Inv. Ver.",
+            "description": "Indicator for Service-Based Invoice Verification"
+          },
+          "MaterialPlannedDeliveryDurn": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "x-sap-precision": 3,
+            "x-sap-scale": 0,
+            "multipleOf": 1,
+            "minimum": -999,
+            "maximum": 999,
+            "example": "0",
+            "title": "Planned Deliv. Time",
+            "description": "Planned Delivery Time in Days"
+          },
+          "MinimumOrderAmount": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "x-sap-precision": 14,
+            "x-sap-scale": 3,
+            "multipleOf": 1.0e-3,
+            "minimum": -99999999999.999,
+            "maximum": 99999999999.999,
+            "example": "0",
+            "title": "Minimum order value"
+          },
+          "PaymentTerms": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Terms of Payment",
+            "description": "Key for Terms of Payment"
+          },
+          "PlanningCycle": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Planning Cycle"
+          },
+          "PricingDateControl": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Pricing Date Control",
+            "description": "Price Determination (Pricing) Date Control"
+          },
+          "ProdStockAndSlsDataTransfPrfl": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "PROACT control prof.",
+            "description": "Profile for transferring material data via IDoc PROACT"
+          },
+          "ProductUnitGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Unit of Measure Grp",
+            "description": "Unit of Measure Group"
+          },
+          "PurOrdAutoGenerationIsAllowed": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Automatic PO",
+            "description": "Automatic Generation of Purchase Order Allowed"
+          },
+          "PurchaseOrderCurrency": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 5,
+            "title": "Order currency",
+            "description": "Purchase order currency"
+          },
+          "PurchasingGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Purchasing Group"
+          },
+          "PurchasingIsBlockedForSupplier": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Pur. block POrg",
+            "description": "Purchasing block at purchasing organization level"
+          },
+          "RoundingProfile": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Rounding Profile"
+          },
+          "ShippingCondition": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Shipping Conditions"
+          },
+          "SuplrDiscountInKindIsGranted": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Checkbox"
+          },
+          "SuplrInvcRevalIsAllowed": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Revaluation",
+            "description": "Revaluation allowed"
+          },
+          "SuplrIsRlvtForSettlmtMgmt": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Settlement Mgmt.",
+            "description": "Indicator: Relevant for Settlement Management"
+          },
+          "SuplrPurgOrgIsRlvtForPriceDetn": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Price determination",
+            "description": "Indicator: \"relev. to price determination (vend. hierarchy)"
+          },
+          "SupplierABCClassificationCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "ABC indicator"
+          },
+          "SupplierAccountNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 12,
+            "title": "Acc. with supplier",
+            "description": "Our account number with the supplier"
+          },
+          "SupplierIsReturnsSupplier": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Returns supplier",
+            "description": "Indicates whether supplier is returns supplier"
+          },
+          "SupplierPhoneNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 16,
+            "title": "Telephone",
+            "description": "Supplier's Telephone Number"
+          },
+          "SupplierRespSalesPersonName": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 30,
+            "title": "Salesperson",
+            "description": "Responsible Salesperson at Supplier's Office"
+          },
+          "SupplierConfirmationControlKey": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Confirmation Control",
+            "description": "Confirmation Control Key"
+          },
+          "IsOrderAcknRqd": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Acknowledgment Reqd.",
+            "description": "Order Acknowledgment Requirement"
+          },
+          "AuthorizationGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Authorization",
+            "description": "Authorization Group"
+          },
+          "SupplierAccountGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Account Group",
+            "description": "Supplier Account Group"
+          },
+          "to_PartnerFunction": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierPartnerFuncType"
+                }
+              }
+            }
+          },
+          "to_PurchasingOrgText": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierPurchasingOrgTextType"
+                }
+              }
+            }
+          }
+        },
+        "title": "Purchasing Organization"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierPurchasingOrgType-create": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Supplier's Account Number"
+          },
+          "PurchasingOrganization": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Purch. Organization",
+            "description": "Purchasing Organization"
+          },
+          "AutomaticEvaluatedRcptSettlmt": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Aut. ev. GRSetmt.Ret",
+            "description": "Automatic evaluated receipt settlement for return items"
+          },
+          "CalculationSchemaGroupCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Schema Grp, Supplier",
+            "description": "Group for Calculation Schema (Supplier)"
+          },
+          "DeletionIndicator": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Del. flag POrg.",
+            "description": "Deletion Indicator for Supplier at Purchasing Level"
+          },
+          "EvaldReceiptSettlementIsActive": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Eval. Receipt Sett.",
+            "description": "Evaluated Receipt Settlement (ERS)"
+          },
+          "IncotermsClassification": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Incoterms",
+            "description": "Incoterms (Part 1)"
+          },
+          "IncotermsTransferLocation": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 28,
+            "title": "Incoterms (Part 2)"
+          },
+          "IncotermsVersion": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Incoterms Version"
+          },
+          "IncotermsLocation1": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 70,
+            "title": "Incoterms Location 1"
+          },
+          "IncotermsLocation2": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 70,
+            "title": "Incoterms Location 2"
+          },
+          "IncotermsSupChnLoc1AddlUUID": {
+            "type": "string",
+            "nullable": true,
+            "format": "uuid",
+            "example": "01234567-89ab-cdef-0123-456789abcdef",
+            "title": "Location UUID"
+          },
+          "IncotermsSupChnLoc2AddlUUID": {
+            "type": "string",
+            "nullable": true,
+            "format": "uuid",
+            "example": "01234567-89ab-cdef-0123-456789abcdef",
+            "title": "Location UUID"
+          },
+          "IncotermsSupChnDvtgLocAddlUUID": {
+            "type": "string",
+            "nullable": true,
+            "format": "uuid",
+            "example": "01234567-89ab-cdef-0123-456789abcdef",
+            "title": "Location UUID"
+          },
+          "IntrastatCrsBorderTrMode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Mode of Transport",
+            "description": "Mode of Transport at the Border (Intrastat)"
+          },
+          "InvoiceIsGoodsReceiptBased": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "GR-Based Inv. Verif.",
+            "description": "Indicator: GR-Based Invoice Verification"
+          },
+          "InvoiceIsMMServiceEntryBased": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Srv.-Based Inv. Ver.",
+            "description": "Indicator for Service-Based Invoice Verification"
+          },
+          "MaterialPlannedDeliveryDurn": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "x-sap-precision": 3,
+            "x-sap-scale": 0,
+            "multipleOf": 1,
+            "minimum": -999,
+            "maximum": 999,
+            "example": "0",
+            "title": "Planned Deliv. Time",
+            "description": "Planned Delivery Time in Days"
+          },
+          "MinimumOrderAmount": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "x-sap-precision": 14,
+            "x-sap-scale": 3,
+            "multipleOf": 1.0e-3,
+            "minimum": -99999999999.999,
+            "maximum": 99999999999.999,
+            "example": "0",
+            "title": "Minimum order value"
+          },
+          "PaymentTerms": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Terms of Payment",
+            "description": "Key for Terms of Payment"
+          },
+          "PlanningCycle": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Planning Cycle"
+          },
+          "PricingDateControl": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Pricing Date Control",
+            "description": "Price Determination (Pricing) Date Control"
+          },
+          "ProdStockAndSlsDataTransfPrfl": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "PROACT control prof.",
+            "description": "Profile for transferring material data via IDoc PROACT"
+          },
+          "ProductUnitGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Unit of Measure Grp",
+            "description": "Unit of Measure Group"
+          },
+          "PurOrdAutoGenerationIsAllowed": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Automatic PO",
+            "description": "Automatic Generation of Purchase Order Allowed"
+          },
+          "PurchaseOrderCurrency": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 5,
+            "title": "Order currency",
+            "description": "Purchase order currency"
+          },
+          "PurchasingGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Purchasing Group"
+          },
+          "PurchasingIsBlockedForSupplier": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Pur. block POrg",
+            "description": "Purchasing block at purchasing organization level"
+          },
+          "RoundingProfile": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Rounding Profile"
+          },
+          "ShippingCondition": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Shipping Conditions"
+          },
+          "SuplrDiscountInKindIsGranted": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Checkbox"
+          },
+          "SuplrInvcRevalIsAllowed": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Revaluation",
+            "description": "Revaluation allowed"
+          },
+          "SuplrIsRlvtForSettlmtMgmt": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Settlement Mgmt.",
+            "description": "Indicator: Relevant for Settlement Management"
+          },
+          "SuplrPurgOrgIsRlvtForPriceDetn": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Price determination",
+            "description": "Indicator: \"relev. to price determination (vend. hierarchy)"
+          },
+          "SupplierABCClassificationCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "ABC indicator"
+          },
+          "SupplierAccountNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 12,
+            "title": "Acc. with supplier",
+            "description": "Our account number with the supplier"
+          },
+          "SupplierIsReturnsSupplier": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Returns supplier",
+            "description": "Indicates whether supplier is returns supplier"
+          },
+          "SupplierPhoneNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 16,
+            "title": "Telephone",
+            "description": "Supplier's Telephone Number"
+          },
+          "SupplierRespSalesPersonName": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 30,
+            "title": "Salesperson",
+            "description": "Responsible Salesperson at Supplier's Office"
+          },
+          "SupplierConfirmationControlKey": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Confirmation Control",
+            "description": "Confirmation Control Key"
+          },
+          "IsOrderAcknRqd": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Acknowledgment Reqd.",
+            "description": "Order Acknowledgment Requirement"
+          },
+          "AuthorizationGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Authorization",
+            "description": "Authorization Group"
+          },
+          "SupplierAccountGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Account Group",
+            "description": "Supplier Account Group"
+          },
+          "to_PartnerFunction": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierPartnerFuncType-create"
+                }
+              }
+            }
+          },
+          "to_PurchasingOrgText": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/API_BUSINESS_PARTNER.A_SupplierPurchasingOrgTextType-create"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "Supplier",
+          "PurchasingOrganization"
+        ],
+        "title": "Purchasing Organization (for create)"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierPurchasingOrgTextType": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "PurchasingOrganization": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Purch. Organization",
+            "description": "Purchasing Organization"
+          },
+          "Language": {
+            "type": "string",
+            "maxLength": 2,
+            "title": "Language",
+            "description": "Language key"
+          },
+          "LongTextID": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Text ID"
+          },
+          "LongText": {
+            "type": "string",
+            "nullable": true,
+            "title": "String"
+          }
+        },
+        "title": "Purchasing Organization Text"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierPurchasingOrgTextType-create": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "PurchasingOrganization": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Purch. Organization",
+            "description": "Purchasing Organization"
+          },
+          "Language": {
+            "type": "string",
+            "maxLength": 2,
+            "title": "Language",
+            "description": "Language key"
+          },
+          "LongTextID": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Text ID"
+          }
+        },
+        "required": [
+          "Supplier",
+          "PurchasingOrganization",
+          "Language",
+          "LongTextID"
+        ],
+        "title": "Purchasing Organization Text (for create)"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierTextType": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "Language": {
+            "type": "string",
+            "maxLength": 2,
+            "title": "Language",
+            "description": "Language key"
+          },
+          "LongTextID": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Text ID"
+          },
+          "LongText": {
+            "type": "string",
+            "nullable": true,
+            "title": "String"
+          }
+        },
+        "title": "Supplier Text"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierTextType-create": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "Language": {
+            "type": "string",
+            "maxLength": 2,
+            "title": "Language",
+            "description": "Language key"
+          },
+          "LongTextID": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Text ID"
+          }
+        },
+        "required": [
+          "Supplier",
+          "Language",
+          "LongTextID"
+        ],
+        "title": "Supplier Text (for create)"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierWithHoldingTaxType": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "CompanyCode": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Company Code"
+          },
+          "WithholdingTaxType": {
+            "type": "string",
+            "maxLength": 2,
+            "title": "Withholding Tax Type",
+            "description": "Indicator for Withholding Tax Type"
+          },
+          "ExemptionDateBegin": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Exemption Start Date",
+            "description": "Date on Which Exemption Begins"
+          },
+          "ExemptionDateEnd": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Exemption End Date",
+            "description": "Date on Which Exemption Ends"
+          },
+          "ExemptionReason": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Exemption Reason",
+            "description": "Reason for Exemption"
+          },
+          "IsWithholdingTaxSubject": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Subject to W/Tx",
+            "description": "Indicator: Subject to Withholding Tax?"
+          },
+          "RecipientType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Recipient Type",
+            "description": "Type of Recipient"
+          },
+          "WithholdingTaxCertificate": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 25,
+            "title": "Exemption Number",
+            "description": "Exemption Certificate Number"
+          },
+          "WithholdingTaxCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "W/Tax Code",
+            "description": "Withholding Tax Code"
+          },
+          "WithholdingTaxExmptPercent": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "x-sap-precision": 5,
+            "x-sap-scale": 2,
+            "multipleOf": 1.0e-2,
+            "minimum": -999.99,
+            "maximum": 999.99,
+            "example": "0",
+            "title": "Exemption Rate"
+          },
+          "WithholdingTaxNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 16,
+            "title": "W/tax number",
+            "description": "Withholding tax identification number"
+          },
+          "AuthorizationGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Authorization",
+            "description": "Authorization Group"
+          }
+        },
+        "title": "Company Withholding Tax"
+      },
+      "API_BUSINESS_PARTNER.A_SupplierWithHoldingTaxType-create": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier",
+            "description": "Account Number of Supplier"
+          },
+          "CompanyCode": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Company Code"
+          },
+          "WithholdingTaxType": {
+            "type": "string",
+            "maxLength": 2,
+            "title": "Withholding Tax Type",
+            "description": "Indicator for Withholding Tax Type"
+          },
+          "ExemptionDateBegin": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Exemption Start Date",
+            "description": "Date on Which Exemption Begins"
+          },
+          "ExemptionDateEnd": {
+            "type": "string",
+            "nullable": true,
+            "example": "/Date(1492041600000)/",
+            "title": "Exemption End Date",
+            "description": "Date on Which Exemption Ends"
+          },
+          "ExemptionReason": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Exemption Reason",
+            "description": "Reason for Exemption"
+          },
+          "IsWithholdingTaxSubject": {
+            "type": "boolean",
+            "nullable": true,
+            "title": "Subject to W/Tx",
+            "description": "Indicator: Subject to Withholding Tax?"
+          },
+          "RecipientType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Recipient Type",
+            "description": "Type of Recipient"
+          },
+          "WithholdingTaxCertificate": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 25,
+            "title": "Exemption Number",
+            "description": "Exemption Certificate Number"
+          },
+          "WithholdingTaxCode": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "W/Tax Code",
+            "description": "Withholding Tax Code"
+          },
+          "WithholdingTaxExmptPercent": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "x-sap-precision": 5,
+            "x-sap-scale": 2,
+            "multipleOf": 1.0e-2,
+            "minimum": -999.99,
+            "maximum": 999.99,
+            "example": "0",
+            "title": "Exemption Rate"
+          },
+          "WithholdingTaxNumber": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 16,
+            "title": "W/tax number",
+            "description": "Withholding tax identification number"
+          },
+          "AuthorizationGroup": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Authorization",
+            "description": "Authorization Group"
+          }
+        },
+        "required": [
+          "Supplier",
+          "CompanyCode",
+          "WithholdingTaxType"
+        ],
+        "title": "Company Withholding Tax (for create)"
+      },
+      "count": {
+        "type": "string",
+        "description": "The number of entities in the collection. Available when using the [$inlinecount](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=67) query option."
+      },
+      "error": {
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "object",
+            "required": [
+              "code",
+              "message"
+            ],
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "object",
+                "required": [
+                  "lang",
+                  "value"
+                ],
+                "properties": {
+                  "lang": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              },
+              "innererror": {
+                "type": "object",
+                "description": "The structure of this object is service-specific"
+              }
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "top": {
+        "name": "$top",
+        "in": "query",
+        "description": "Show only the first n items, see [Paging - Top](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=66)",
+        "schema": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "example": 50
+      },
+      "skip": {
+        "name": "$skip",
+        "in": "query",
+        "description": "Skip the first n items, see [Paging - Skip](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "schema": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "count": {
+        "name": "$inlinecount",
+        "in": "query",
+        "description": "Include count of items, see [Inlinecount](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=67)",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "allpages",
+            "none"
+          ]
+        }
+      }
+    },
+    "responses": {
+      "error": {
+        "description": "Error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/error"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "OAuth2Auth": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "scopes": {
+              "API_BUSINESS_PARTNER_0001": ""
+            },
+            "refreshUrl": "https://{host}:{port}",
+            "authorizationUrl": "https://{host}:{port}",
+            "tokenUrl": "https://{host}:{port}"
+          }
+        }
+      },
+      "BasicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  },
+  "security": [
+    {
+      "OAuth2Auth": [
+        "API_BUSINESS_PARTNER_0001"
+      ]
+    },
+    {
+      "BasicAuth": []
+    }
+  ]
+}
