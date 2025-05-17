@@ -39,4 +39,4 @@ By integrating tools, we enhance our agent's capabilities. Our objective is to e
       - Complete the process by clicking the *Save* button.
       ![resource-dialog](resource-dialog.png)
 
-3. Congratulations! You have successfully integrated all necessary tools with your agent. Proceed to Step 4 to evaluate your agent's capabilities.
+3. Congratulations! You have successfully integrated all necessary tools with your agent. Proceed to [Step 4](../04-send-message) to evaluate your agent's capabilities.

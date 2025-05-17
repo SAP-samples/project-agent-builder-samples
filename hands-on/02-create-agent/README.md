@@ -18,4 +18,4 @@
    ![create-agent-dialog](create-agent-dialog.png)
 
 4. Upon successful creation, you will be automatically redirected to your agent*s detail page.
-   Please proceed to Step 3 to continue the configuration process.
+   Please proceed to [Step 3](../03-add-tools) to continue the configuration process.
